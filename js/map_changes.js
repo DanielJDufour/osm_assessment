@@ -1,5 +1,5 @@
 // initialize map
-var map_changes = L.map('map_changes').setView([11, 124], 7);
+var map_changes = L.map('map_changes', {scrollWheelZoom: false}).setView([11, 124], 7);
 
 // creates style for changesetsLayer and then creates changesetsLayer
 var changesetsLayerStyle = {
@@ -21,7 +21,7 @@ var combinedTasksLayer = L.geoJson(undefined,{style:combinedTasksLayerStyle}).ad
 
 // add OSM base layer
 var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors.  OSM Changesets from Pascal Neis (<a href="http://resultmaps.neis-one.org/osm-typhoon-haiyan-2013#8/11.084/123.635">neis-one.org</a>)',
     maxZoom: 18
 }).addTo(map_changes);
 

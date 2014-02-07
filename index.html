@@ -28,7 +28,8 @@
 	<div class="col-lg-3">
 		<div class="cg-sidebar" style="position:fixed">
 			<ul class="nav cg-sidenav">
-				<li style="margin:30px 15px;"><img src="img/ARC_logo.png" height="50px"></li>
+				<li style="margin:30px 15px;"><img src="img/ARC_logo.png" style="width: 150px; height: auto;"></li>
+				<li style="margin:30px 15px;"><img src="img/REACH_logo.png" style="width: 150px; height: auto;"></li>
 				<li><a href="#intro">Introduction</a></li>              
 				<li><a href="#executiveSummary">Executive Summary</a></li>
 				<li><a href="#findings">Findings</a></li>	
@@ -45,7 +46,7 @@
 					<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 				</li>
 			<li><a href="docs/OSM Damage Assessment Interim Report.pdf" target="_blank"><em>Download PDF Report</em></a></li>
-			<li><a href="data/OSM Damage Assessment Data.zip" target="_blank"><em>Download Raw Data</em></a></li>
+			<li><a href="https://github.com/AmericanRedCross/osm_assessment/tree/master/data" target="_blank"><em>Download Raw Data</em></a></li>
 			<li><a href="../../"><em>American Red Cross GIS Home</em></a></li>				
 			</ul>
 		</div>
@@ -55,7 +56,6 @@
 	<div class="cg-intro container" id="intro">
 	    <h1>OpenStreetMap Damage Assessment Review</h1>
     	<p class="lead">Interim Report</p> 
-    	<h5><a href="docs/OSM Damage Assessment Interim Report.pdf" target="_blank">Download PDF Report</a></h5>    
   	</div>    
   	<div class="otherPlaces container">
     	<img class="pull-left" src="img/Public-images-osm_logo.png" style="margin:0px 10px 20px 0px; width: 35px; height: auto;"><strong><a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap (OSM)</a></strong> is a project to create and distribute free geographic data for the world. It is being built by volunteer contributors. Learn more at <a href="http://wiki.openstreetmap.org">http://wiki.openstreetmap.org</a> and <a href="http://learnosm.org">http://learnosm.org</a>.
@@ -68,14 +68,15 @@
 		<input id="range" type="range" min="0" max="1.0" step="any" style="width: 100%;" />
 		<div id = "map_imagery"></div>
 		<script src="js/map_imagery.js"></script>
-		<span>Map 1: This map shows a view of Tacloban, Philippines before (left) and after (right) the Typhoon.</span>
+		<span class = "caption">Map 1: This map shows a view of Tacloban, Philippines before (left) and after (right) the Typhoon.</span>
 		<p>This report identifies areas of strong promise and distinct limitations for crowdsourcing damage assessments through OSM. It discusses the initial findings and delivers recommendations on investments in technology, policy and programmatic approaches that could overcome existing limitations and improve the accuracy and impact of using OSM as a viable damage assessment method.</p><hr>
 		<p>Overall the assessment shows that the OSM damage assessment data created in the area affected by Typhoon Haiyan (Yolanda) is not reliable enough to utilize for damage analysis and recovery planning. On the ground, existing tools for linking assessments with OSM data are too unreliable and manual to be practical in a large-scale disaster. However, the data was not so invalid, nor the technology so obtuse, as to suggest a lack of promise in these approaches. The assessment found that modest investments in technology, business processes and pre-disaster activities could make OSM a strong platform for damage assessment data and analysis in future disasters.</p><hr>
 		<p>This assessment was conducted through a partnership between the REACH Initiative and the American Red Cross with funding from the U.S. Office of Foreign Disaster Assistance (OFDA).  Data collection and analysis ran in parallel to the REACH-facilitated Global Shelter Cluster needs assessment in order to share resources and have sources of comparison and triangulation of data.</p>
-		<h3 id="plan">1.1 Methodology in Brief</h3>
+		<h3 id="plan">Methodology in Brief</h3>
 			<p>To test the validity of remotely created damage data, small teams of paid enumerators assessed building damages in randomly selected areas in six municipalities highly affected by the typhoon. Five of these areas were assessed by OSM contributors after Typhoon Haiyan's passage using satellite imagery from the State Department’s Humanitarian Information Unit.</p>
 			<div style="text-align: center; margin: 10px;">
 				<img src="img/2014_01_31_OSM_DA_Assessment_Area.png" style = "width: 100%; max-width: 600px;">
+				</br><span class = "caption">Map 2: This map shows the municipalities that were assessed forming the basis for this report.</span>
 			</div>
 			<p>Enumerators classified building damages using the following four criteria:
 				<ol>
@@ -110,6 +111,7 @@
 		<p>The results of the assessment were encouraging but also highlighted some critical limitations of the OSM process. OSM contributors did a reasonably good job of identifying affected buildings but overestimated the number of buildings completely destroyed by the typhoon and underestimated the number of buildings that were majorly damaged.</p>
 		<div id = "map_changes"></div>
 		<script src="js/map_changes.js"></script>
+		<span class = "caption">Map 3: This map shows the changes that contributors made to OSM after the typhoon.</span>
 		<p>Contributors were unable to view “partial” damages to the sides or insides of buildings due to the inherent limitations of overhead satellite imagery. Therefore, this report compares the number of undamaged buildings recorded in OSM with the undamaged or partially damaged buildings observed during enumeration.  On the whole, contributors underreported the number of undamaged or partially damaged buildings by a small but meaningful margin.</p>
 		<p>These results reflect three key factors:
 			<ol>
@@ -122,6 +124,7 @@
 			</br>
 			<span style = "float: left; font-style: italic;">Sample Size: 1,343 structures</span>
 			<span style = "float: right; font-style: italic;">Confidence Rate: 95%</span>
+			</br>
 			<table id = "damageClassificationTable">
 				<tbody>
 					<tr>
@@ -132,21 +135,21 @@
 						<th>Percent under/over-represented in OSM</th>
 					</tr>
 					<tr>
-						<td>Destroyed</td>
+						<td style = "background-color: red">Destroyed</td>
 						<td>32.76</td>
 						<td>14</td>
 						<td>18.76</td>
 						<td>Overrepresented 134%</td>
 					</tr>
 					<tr>
-						<td>Major Damage</td>
+						<td style="background-color: rgb(255,192,0);">Major Damage</td>
 						<td>29.19</td>
 						<td>39.24</td>
 						<td>-10.05</td>
 						<td>Underrepresented 25%</td>
 					</tr>
 					<tr>
-						<td>No / Partial Damage</td>
+						<td style="background-color: rgb(146, 208, 80);">No / Partial Damage</td>
 						<td>38.05</td>
 						<td>46.77</td>
 						<td>-8.72</td>
@@ -165,12 +168,15 @@
 		</p>
 		<p>These statistics hint at subtler factors at play which will be fleshed out in the forthcoming final report.</p>
 		<p>However, further investigation in this report of the third statistic highlighted above is warranted because it suggests problems with the data informing the high level analysis. By randomly selecting buildings marked in OSM as undamaged and flagged by enumerators as heavily damaged or destroyed and assessing them with the imagery provided to OSM contributors, the assessment found the following:
-			<ol>
+			<ul>
 				<li>In most cases the limitation was the imagery that seemed to show undamaged buildings when in reality they had sustained damage.</li>
 				<li>In a few cases, the imagery was unclear due to low resolution, so OSM contributors appeared to have left the buildings’ tags untouched as per the instructions provided for unclear buildings.  Future guidance instructing contributors to mark “damage=unclear” in such situations could avoid this problem.</li>
 				<li>In a final two cases two clearly damaged buildings had been incorrectly labeled as “building=yes” (or “undamaged”). They also lacked the review tags indicating whether a building was assessed for damages or not. This suggests that the buildings may have been accidentally overlooked during OSM editing. Unfortunately contributors were inconsistent in their use of the review tags, making it impossible to analyse the impact of this factor further.</li>
-			</ol>
+			</ul>
 		</p>
+		<div id = "map_classification"></div>
+		<script src="js/map_classification.js"></script>
+		<span class = "caption">Map 4: This is a map comparing the on-the-ground damage classifications and the classifications by OSM contributors.</span>
 	</div>
 	<div class="chapter">
 	    <div class="page-header">
@@ -179,40 +185,49 @@
 	    <table id = "tableRecommendations">
 			<tbody>
 				<tr>
+<!--					<th><img class="pull-left" src="img/groundrec.png" width="50px" style="margin:5px; border-radius: 10px;">Ground Recommendations</th>
+					<th><img class="pull-left" src="img/remoterec.png" width="50px" style="margin:5px; border-radius: 10px;">Remote Assessment Recommendations</th>
+-->
+					<th><img class="pull-left" src="img/groundrec.png" width="50px" style="border-radius: 10px;"></th>
 					<th>Ground Recommendations</th>
+					<th><img class="pull-left" src="img/remoterec.png" width="50px" style="border-radius: 10px;"></th>
 					<th>Remote Assessment Recommendations</th>
 				</tr>
 				<tr>
+					<td></td>
 					<td><span style = "color: rgb(213,134,132)">1.  </span>Data Preparedness for Disaster Preparedness</td>
+					<td></td>
 					<td><span style = "color: rgb(213,134,132)">1.  </span>Improved Tagging Schemas</td>
 				</tr>
 				<tr>
+					<td></td>
 					<td><span style = "color: rgb(213,134,132)">2.  </span>Better tools for data collection</td>			
+					<td></td>
 					<td><span style = "color: rgb(213,134,132)">2.  </span>Better Crowd Coordination</td>			
 				</tr>
 				<tr>
-					<td></td>
+					<td></td><td></td><td></td>
 					<td><span style = "color: rgb(213,134,132)">3.  </span>Guidance Materials</td>			
 				</tr>
 				<tr>
-					<td></td>
+					<td></td><td></td><td></td>
 					<td><span style = "color: rgb(213,134,132)">4.  </span>Comprehensive Validation Process</td>			
 				</tr>
 				<tr>
-					<td></td>
+					<td></td><td></td><td></td>
 					<td><span style = "color: rgb(213,134,132)">5.  </span>Emphasis on Comparison</td>			
 				</tr>
 				<tr>
-					<td></td>
+					<td></td><td></td><td></td>
 					<td><span style = "color: rgb(213,134,132)">6.  </span>Timely Imagery Provision</td>			
 				</tr>
 				<tr>
-					<td></td>
+					<td></td><td></td><td></td>
 					<td><span style = "color: rgb(213,134,132)">7.  </span>Targeted Imagery Acquisition</td>			
 				</tr>
 			</tbody>
 		</table>
-		<h3>3.1 Ground Assessment Recommendations</h3>
+		<h3>Ground Assessment Recommendations</h3>
 			<p>This assessment found that while OSM works well as a rough damage assessment platform for humanitarian responders during a disaster response, flaws still exist. Below are some recommendations to improve its utility:</p>
 			<h4>1.	Data Preparedness for Disaster Preparedness</h4>
 				<p>Investing in the creation of detailed building data layers within OSM prior to disasters will improve OSM contributors’ ability to spot missing or damaged buildings and build an accurate snapshot of damages.</p>
@@ -221,7 +236,7 @@
 			<h4>2.	Better tools for data collection</h4>
 				<p>Linking other assessments and surveys to OSM is, at present, an inconsistent process. Manual verification based on orienting using paper maps and recording 10 digit ID numbers by hand unavoidably introduces errors. Several hundred recorded households could not be linked with OSM due to incorrectly recorded OSM ID numbers. This hindered the assessment and caused much wasted effort. Moreover, concerns  about the reliability of the process for linking collected data to OSM and the considerable spatial navigation difficulties reported by some enumerators effectively prevented the assessment from linking data from the REACH comprehensive shelter assessment to OSM buildings.</p>
 				<p>We strongly recommend building a mobile data survey tool for field assessment teams, built on open source technology, to link damage assessment data (and other humanitarian data) to OSM. This will improve the speed and accuracy of the work described above and set the stage for any number of humanitarian assessments to directly leverage OSM data.</p>
-		<h3>3.2 Remote Assessment Recommendations</h3>
+		<h3>Remote Assessment Recommendations</h3>
 			<p>This assessment found existing tools for conducting remote damage assessments with OSM fundamentally robust but hampered by underdeveloped support and business processes. The following improvements would enhance the reliability of crowdsourced damage assessments:</p>
 			<h4>1.	Improved Tagging Schemas</h4>
 				<p>The ad-hoc tagging schema used for this operation created a number of problems during the analysis phase. To avoid this challenge, the OSM community needs to standardize a set of damage tags that can be used and/or modified for future disasters. Specifically, a tagging schema that separates the type of a feature (e.g. a building) and its damages will improve the ease of analysis. These should feature a tag to indicate unclear or inconclusive imagery for damages. Finally, a consistent tag indicating that a feature has been reviewed in the context of a specific disaster will help.</p>
@@ -263,8 +278,6 @@
 			<li>The MapAction Field Guide to Humanitarian Mapping is a detailed manual available for download at  <a href="http://www.mapaction.org/resources.html" target="_blank">http://www.mapaction.org/resources.html</a></li>
 		</ul>
 	</div>
-	<div style="height:500px;">	</div>	
- 
 </div> <!-- close col-lg-9 -->
 </div> <!-- close body container -->
 

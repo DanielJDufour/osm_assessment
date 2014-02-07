@@ -17,7 +17,7 @@ var combinedTasksLayerStyle = {
     "opacity": .5,
 	"fillOpacity": 0
 };
-var combinedTasksLayer = L.geoJson(undefined,{style:combinedTasksLayerStyle}).addTo(map_changes);
+var combinedTasksLayer = L.geoJson(undefined,{style:combinedTasksLayerStyle});
 
 // add OSM base layer
 var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
